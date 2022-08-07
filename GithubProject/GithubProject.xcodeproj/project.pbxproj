@@ -17,6 +17,7 @@
 		38CD3282289F9E1A00070A35 /* RepositoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CD3281289F9E1A00070A35 /* RepositoryListViewController.swift */; };
 		38CD3284289F9E2200070A35 /* RepositoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CD3283289F9E2200070A35 /* RepositoryListCell.swift */; };
 		38CD3287289F9EDA00070A35 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 38CD3286289F9EDA00070A35 /* SnapKit */; };
+		38CD328928A0044700070A35 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CD328828A0044700070A35 /* Repository.swift */; };
 		4D8EBF69A3440648047D332E /* Pods_GithubProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A9E0863EC696C5F0DE1FCE /* Pods_GithubProject.framework */; };
 		C7E94C0242EC74D7ADCD2C44 /* Pods_GithubProject_GithubProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0439C1BAA4C9AF3FA0E6B631 /* Pods_GithubProject_GithubProjectUITests.framework */; };
 		E9055EEFC96600977F045BCF /* Pods_GithubProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C4CB5B969F3F63EF5718DF /* Pods_GithubProjectTests.framework */; };
@@ -54,6 +55,7 @@
 		38CD3273289F9DE100070A35 /* GithubProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		38CD3281289F9E1A00070A35 /* RepositoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewController.swift; sourceTree = "<group>"; };
 		38CD3283289F9E2200070A35 /* RepositoryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListCell.swift; sourceTree = "<group>"; };
+		38CD328828A0044700070A35 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		43E86E4788F6DA64AD20CA83 /* Pods-GithubProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-GithubProjectTests/Pods-GithubProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		65C4CB5B969F3F63EF5718DF /* Pods_GithubProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F62648256B15FB707BA24D9 /* Pods-GithubProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubProject.release.xcconfig"; path = "Target Support Files/Pods-GithubProject/Pods-GithubProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				38CD3281289F9E1A00070A35 /* RepositoryListViewController.swift */,
 				38CD3283289F9E2200070A35 /* RepositoryListCell.swift */,
+				38CD328828A0044700070A35 /* Repository.swift */,
 			);
 			path = RepositoryList;
 			sourceTree = "<group>";
@@ -174,7 +177,6 @@
 				43E86E4788F6DA64AD20CA83 /* Pods-GithubProjectTests.debug.xcconfig */,
 				AD46BC28B255123FF5113625 /* Pods-GithubProjectTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -275,7 +277,7 @@
 			);
 			mainGroup = 38CD3244289F9DDF00070A35;
 			packageReferences = (
-				38CD3285289F9EDA00070A35 /* XCRemoteSwiftPackageReference "SnapKit.git" */,
+				38CD3285289F9EDA00070A35 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 38CD324E289F9DDF00070A35 /* Products */;
 			projectDirPath = "";
@@ -424,6 +426,7 @@
 			files = (
 				38CD3251289F9DDF00070A35 /* AppDelegate.swift in Sources */,
 				38CD3253289F9DDF00070A35 /* SceneDelegate.swift in Sources */,
+				38CD328928A0044700070A35 /* Repository.swift in Sources */,
 				38CD3282289F9E1A00070A35 /* RepositoryListViewController.swift in Sources */,
 				38CD3284289F9E2200070A35 /* RepositoryListCell.swift in Sources */,
 			);
@@ -759,7 +762,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		38CD3285289F9EDA00070A35 /* XCRemoteSwiftPackageReference "SnapKit.git" */ = {
+		38CD3285289F9EDA00070A35 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Snapkit/SnapKit.git";
 			requirement = {
@@ -772,7 +775,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		38CD3286289F9EDA00070A35 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 38CD3285289F9EDA00070A35 /* XCRemoteSwiftPackageReference "SnapKit.git" */;
+			package = 38CD3285289F9EDA00070A35 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
