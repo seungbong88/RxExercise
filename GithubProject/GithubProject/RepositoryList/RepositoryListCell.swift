@@ -21,17 +21,15 @@ class RepositoryListCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        [
-            nameLabel, descriptionLabel,
-            starImageView, starLabel, languageLabel
-        ].forEach {
-            addSubview($0)
-        }
-        
         initUI()
     }
     
     private func initUI() {
+        let labelList = [nameLabel, descriptionLabel, starImageView, starLabel, languageLabel]
+        labelList.forEach {
+            addSubview($0)
+        }
+        
         guard let repository = repository else { return }
         
         nameLabel.text = repository.name
