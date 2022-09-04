@@ -1,0 +1,6 @@
+module Pods_rxCafeApp {
+  umbrella header "Pods-rxCafeApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
