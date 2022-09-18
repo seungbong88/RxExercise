@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeatherAppProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ako-pF-2oa">
+                                <rect key="frame" x="30" y="174" width="354" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o73-5q-9Wt">
+                                <rect key="frame" x="30" y="310" width="354" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vor-ku-JRf">
+                                <rect key="frame" x="30" y="420" width="354" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yzr-re-cek">
+                                <rect key="frame" x="30" y="74" width="354" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="yco-Gd-zc2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yzr-re-cek" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="0sJ-Qi-Y2h"/>
+                            <constraint firstItem="Ako-pF-2oa" firstAttribute="leading" secondItem="yzr-re-cek" secondAttribute="leading" id="4AT-mk-ycr"/>
+                            <constraint firstItem="yzr-re-cek" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="4fS-CQ-1Kf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yzr-re-cek" secondAttribute="trailing" constant="30" id="Es2-5F-yrJ"/>
+                            <constraint firstItem="o73-5q-9Wt" firstAttribute="trailing" secondItem="Ako-pF-2oa" secondAttribute="trailing" id="Id2-S8-Pbc"/>
+                            <constraint firstItem="Vor-ku-JRf" firstAttribute="trailing" secondItem="o73-5q-9Wt" secondAttribute="trailing" id="K5A-jq-ewL"/>
+                            <constraint firstItem="o73-5q-9Wt" firstAttribute="top" secondItem="Ako-pF-2oa" secondAttribute="bottom" constant="100" id="LvO-ZD-LuY"/>
+                            <constraint firstItem="Vor-ku-JRf" firstAttribute="leading" secondItem="o73-5q-9Wt" secondAttribute="leading" id="QJp-Aq-vnS"/>
+                            <constraint firstItem="Vor-ku-JRf" firstAttribute="top" secondItem="o73-5q-9Wt" secondAttribute="bottom" constant="50" id="StL-Pg-eNE"/>
+                            <constraint firstItem="Ako-pF-2oa" firstAttribute="trailing" secondItem="yzr-re-cek" secondAttribute="trailing" id="X5S-LG-8pq"/>
+                            <constraint firstItem="Ako-pF-2oa" firstAttribute="top" secondItem="yzr-re-cek" secondAttribute="bottom" constant="50" id="XAs-Qu-Nvf"/>
+                            <constraint firstItem="o73-5q-9Wt" firstAttribute="leading" secondItem="Ako-pF-2oa" secondAttribute="leading" id="YxT-dQ-isk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cityNameLabel" destination="Ako-pF-2oa" id="vyv-kB-TtP"/>
+                        <outlet property="humanityLabel" destination="Vor-ku-JRf" id="kxg-wD-D6d"/>
+                        <outlet property="searchTextField" destination="yzr-re-cek" id="2OO-gC-LJl"/>
+                        <outlet property="temperatureLabel" destination="o73-5q-9Wt" id="tmM-iR-V3H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
