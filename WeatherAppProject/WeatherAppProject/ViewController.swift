@@ -27,31 +27,35 @@ class ViewController: UIViewController, UITextFieldDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    searchTextField.delegate = self
-    
-    rxWeather
-      .observe(on: MainScheduler.instance)
-      .subscribe(onNext: { data in
-        self.cityNameLabel.text = data.name
-        self.temperatureLabel.text = "\(data.main?.temp ?? 0)"
-        self.humanityLabel.text = "\(data.main?.humidity ?? 0)"
-      })
-      .disposed(by: disposeBag)
+
+    bind()
   }
   
-  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    if textField.text?.count ?? 0 <= 0 { return false }
+  private func bind() {
+    let search = searchTextField
+      .rx.controlEvent(.editingDidEndOnExit)
+      .map { self.searchTextField.text ?? "" }
+      .filter { !$0.isEmpty }
+      .flatMapLatest { text in
+        APIController.shared
+          .loadWeather(for: text)
+      }
+      .asDriver(onErrorJustReturn: Weather(name: "", icon: "", main: nil))
     
-    rxFetchData(city: textField.text!)
-      .subscribe(onNext: {
-        self.rxWeather.onNext($0)
-      }, onError: {
-        self.rxWeather.onError($0)
-      })
+    search
+      .map { $0.name }
+      .drive(cityNameLabel.rx.text)
       .disposed(by: disposeBag)
-
-    return true
+    
+    search
+      .map { "\($0.main?.temp ?? 0) ° C" }
+      .drive(temperatureLabel.rx.text)
+      .disposed(by: disposeBag)
+    
+    search
+      .map { "\($0.main?.humidity ?? 0) %"}
+      .drive(humanityLabel.rx.text)
+      .disposed(by: disposeBag)
   }
 }
 

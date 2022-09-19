@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B9CA40D28D8259E006F6526 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9CA40C28D8259E006F6526 /* APIController.swift */; };
 		B40BCF382EB6E538B54F9C99 /* libPods-WeatherAppProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3124A41C32EFA6713E049923 /* libPods-WeatherAppProject.a */; };
 		CB6DCAD328C62A8400FBE37D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6DCAD228C62A8400FBE37D /* AppDelegate.swift */; };
 		CB6DCAD528C62A8400FBE37D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6DCAD428C62A8400FBE37D /* SceneDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B9CA40C28D8259E006F6526 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		3124A41C32EFA6713E049923 /* libPods-WeatherAppProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherAppProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAE89B1F71C2A835E9F92821 /* Pods-WeatherAppProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherAppProject.release.xcconfig"; path = "Target Support Files/Pods-WeatherAppProject/Pods-WeatherAppProject.release.xcconfig"; sourceTree = "<group>"; };
 		CB6DCACF28C62A8400FBE37D /* WeatherAppProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherAppProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,7 +60,6 @@
 				FE59BE6FBDFB2084BC402C62 /* Pods-WeatherAppProject.debug.xcconfig */,
 				BAE89B1F71C2A835E9F92821 /* Pods-WeatherAppProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -86,6 +87,7 @@
 				CB6DCAE828C630CA00FBE37D /* Entities */,
 				CB6DCAD228C62A8400FBE37D /* AppDelegate.swift */,
 				CB6DCAD428C62A8400FBE37D /* SceneDelegate.swift */,
+				0B9CA40C28D8259E006F6526 /* APIController.swift */,
 				CB6DCAD628C62A8400FBE37D /* ViewController.swift */,
 				CB6DCAD828C62A8400FBE37D /* Main.storyboard */,
 				CB6DCADB28C62A8500FBE37D /* Assets.xcassets */,
@@ -201,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB6DCAE728C6309B00FBE37D /* Weather.swift in Sources */,
+				0B9CA40D28D8259E006F6526 /* APIController.swift in Sources */,
 				CB6DCAD728C62A8400FBE37D /* ViewController.swift in Sources */,
 				CB6DCAD328C62A8400FBE37D /* AppDelegate.swift in Sources */,
 				CB6DCAD528C62A8400FBE37D /* SceneDelegate.swift in Sources */,
@@ -358,6 +361,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -386,6 +390,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
