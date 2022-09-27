@@ -24,7 +24,7 @@
    - Subject의 종류
    - 추가 Observable
    - Realy
-3. [Operator](#3. Operator)
+3. [Operator](#3.-operator)
    - Filtering Operator
    - Combining Operator
    - Time Based Operator
@@ -35,7 +35,7 @@
 
 ## 1. Observable
 
-\n
+
 
 #### Observable 이란
 
@@ -190,7 +190,7 @@ let observable = Observable.of(1, 2, 3)
 
 ## 2. Subject, Relay
 
----
+
 
 #### Subject 란?
 
@@ -390,7 +390,7 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
 
 ## 3. Operator
 
----
+
 
 #### Filtering Operator
 
