@@ -12,7 +12,7 @@
 
 #### [목차]
 
-1. [Observable](#1. Observable)
+1. [Observable](#1.-observable)
    - Observable 이란
    - Observable의 생명주기
    - Observable의 생성
