@@ -1,4 +1,4 @@
-# RxTestProject
+# RxTestProject  
 
 
 
@@ -6,7 +6,7 @@
 
 - 비동기로 처리되는 경우에는 호출한 함수가 끝난 뒤에 클로저를 사용해서 처리한다.
 - 비동기로 처리된 후에 다시 비동기로 프로세스를 처리할 경우, 사용하는 콜백이 많아지고 코드의 가독성은 떨어진다. (클로저를 중복으로 사용하기 때문!)
-- 이렇게 클로저로 응답을 받지 않고, 일반 함수에서 리턴을 받는 것 처럼 비동기 처리를 하기 위해 사용하는 것이 RxSwift라고 한다
+- 이렇게 클로저로 응답을 받지 않고, 일반 함수에서 리턴을 받는 것 처럼 비동기 처리를 하기 위해 사용하는 것이 RxSwift라고 한다  
 
 
 
@@ -27,8 +27,8 @@
 3. [Operator](#3.-operator)
    - Filtering Operator
    - Combining Operator
-   - Time Based Operator
-
+   - Time Based Operator  
+  
 
 
 
