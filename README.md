@@ -7,7 +7,7 @@
 - 비동기로 처리된 후에 다시 비동기로 프로세스를 처리할 경우, 사용하는 콜백이 많아지고 코드의 가독성은 떨어진다. (클로저를 중복으로 사용하기 때문!)
 - 이렇게 클로저로 응답을 받지 않고, 일반 함수에서 리턴을 받는 것 처럼 비동기 처리를 하기 위해 사용하는 것이 RxSwift라고 한다    
 
-<br/> <br/>
+<br/>
 
 
 #### [목차]
@@ -33,8 +33,6 @@
 
 
 ## 1. Observable
-<br/>
-
 
 #### Observable 이란
 
@@ -62,6 +60,7 @@ RxSwift의 핵심
 
 
 <br/>
+
 #### Observable의 생성
 
 1. 직접 생성
@@ -124,8 +123,8 @@ RxSwift의 핵심
    let observable = Observable<Int>.repeatElement(6) // 6, 6, 6, 6 ....
    ```
 
-   
 <br/> <br/>
+
 #### Subscribe
 
 - Observable을 구독하는 행위 
@@ -154,6 +153,7 @@ let observable = Observable.of(1, 2, 3)
 
 
 <br/>
+
 #### Disposing
 
 - 구독 취소
@@ -172,6 +172,7 @@ let observable = Observable.of(1, 2, 3)
 
 
 <br/>
+
 ####  Observable과 Observer
 
 - Observable : 데이터를 관찰하다가 이벤트가 발생하면 방출하는 객체
@@ -185,12 +186,11 @@ let observable = Observable.of(1, 2, 3)
 
 
 
-
 <br/><br/>
+
 ## 2. Subject, Relay
 
 
-<br/>
 #### Subject 란?
 
 ```text
@@ -218,6 +218,7 @@ Subject는 브릿지나 프록시의 역할을 한다. 이는 ReactiveX에서 Ob
 
 
 <br/>
+
 #### Subject의 종류
 
 1. AsyncSubject
@@ -308,6 +309,7 @@ Subject는 브릿지나 프록시의 역할을 한다. 이는 ReactiveX에서 Ob
 
 
 <br/>
+
 #### Relay란?
 
 - Relay는 Subject를 Wrapping 한 것, Subject와 거의 유사하게 동작한다
@@ -316,6 +318,7 @@ Subject는 브릿지나 프록시의 역할을 한다. 이는 ReactiveX에서 Ob
 
 
 <br/>
+
 #### Relay의 종류
 
 1. AsyncRelay
@@ -325,12 +328,14 @@ Subject는 브릿지나 프록시의 역할을 한다. 이는 ReactiveX에서 Ob
 
 
 <br/>
+
 #### Trait 이란?
 
 Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘어서 communicate 할 수 있도록 도와주는 것.
 
 
 <br/>
+
 #### Trait의 종류
 
 - ControlProperty / ControlEvent
@@ -339,6 +344,7 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
 
 
 <br/>
+
 #### Trait의 특징
 
 - 에러를 발생시키지 않는다.
@@ -348,12 +354,14 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
 
 
 <br/>
+
 #### Driver
 
 에러를 방출하지 않고, 메인스레드에서 동작하며, 백그라운드 스레드에서 UI 변화가 만들어지는 것을 회피하는 특별한 Observable
 
 
 <br/>
+
 #### Signal
 
 - 실패하지 않음
@@ -365,6 +373,7 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
 
 
 <br/>
+
 #### 추가 Observable
 
 1. Single
@@ -385,12 +394,11 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
 
 
 
-
 <br/><br/>
+
 ## 3. Operator
 
 
-<br/>
 #### Filtering Operator
 
 - ignoreElement : onNext의 이벤트를 무시하는 operator
@@ -404,7 +412,9 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
   - 기존 : element
 
   - enumerated : (index, element)
+
 <br/>
+
 #### Combining Operator
 
 여러 Observable을 합치는 Operator
@@ -473,6 +483,7 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
   ```
 
 <br/>
+
 #### Time Based Operator
 
 1. replay : 이벤트 방출 후에 이벤트 발생 시 정해놓은 버퍼 만큼의 이벤트를 방출
@@ -550,6 +561,7 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
 
 
 <br/>
+
 #### 에러 관리
 
 - catch : 에러를 확인하고 처리하는 방법
