@@ -19,7 +19,7 @@
    - Subscribe
    - Disposing
    - Observable과 Observer
-2. [Subject, Relay](#2. Subject, Relay)
+2. [Subject, Relay](#2.-subject,-relay)
    - Subject 란?
    - Subject의 종류
    - 추가 Observable
