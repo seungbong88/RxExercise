@@ -29,12 +29,11 @@
    - Combining Operator
    - Time Based Operator  
   
-
-
+<br/> <br/>
 
 
 ## 1. Observable
-
+<br/>
 
 
 #### Observable 이란
@@ -42,7 +41,7 @@
 - Obsevable은 비동기 등 처리를 통해 '나중에 생기는 데이터'를 처리하는 객체라고 생각하면 된다.
 
 - Observable은 for-each 로 대표되는 swift의 Sequence와 동일한 개념이다.
-
+<br/>
 
 
 #### Observable의 생명주기
@@ -62,7 +61,7 @@ RxSwift의 핵심
 ```
 
 
-
+<br/>
 #### Observable의 생성
 
 1. 직접 생성
@@ -126,7 +125,7 @@ RxSwift의 핵심
    ```
 
    
-
+<br/> <br/>
 #### Subscribe
 
 - Observable을 구독하는 행위 
@@ -154,7 +153,7 @@ let observable = Observable.of(1, 2, 3)
   - bind 를 사용하면 더 간단하게 값을 넣어줄 수 있다.
 
 
-
+<br/>
 #### Disposing
 
 - 구독 취소
@@ -172,7 +171,7 @@ let observable = Observable.of(1, 2, 3)
 - 구독 취소를 하는 이유 : 무한히 이벤트 방출을 기다리는 객체를 남겨두는 것은 메모리 누수를 초래할 수 있기 때문
 
 
-
+<br/>
 ####  Observable과 Observer
 
 - Observable : 데이터를 관찰하다가 이벤트가 발생하면 방출하는 객체
@@ -187,11 +186,11 @@ let observable = Observable.of(1, 2, 3)
 
 
 
-
+<br/><br/>
 ## 2. Subject, Relay
 
 
-
+<br/>
 #### Subject 란?
 
 ```text
@@ -218,7 +217,7 @@ Subject는 브릿지나 프록시의 역할을 한다. 이는 ReactiveX에서 Ob
   - 최초 이벤트는 [1, 2, 3] 이 발생하며, 외부에서 onNext를 이용해 데이터를 넣어줬기 때문에 이후 [4, 5, 6] 이벤트가 한 번 더 발생한다.
 
 
-
+<br/>
 #### Subject의 종류
 
 1. AsyncSubject
@@ -308,7 +307,7 @@ Subject는 브릿지나 프록시의 역할을 한다. 이는 ReactiveX에서 Ob
    - 메모리를 효율적으로 사용하기 위해서 최초 생성 시 버퍼 크기를 선언해준다.
 
 
-
+<br/>
 #### Relay란?
 
 - Relay는 Subject를 Wrapping 한 것, Subject와 거의 유사하게 동작한다
@@ -316,7 +315,7 @@ Subject는 브릿지나 프록시의 역할을 한다. 이는 ReactiveX에서 Ob
 - 그렇기 때문에 Relay는 이벤트가 결코 종료되지 않음을 보장한다.
 
 
-
+<br/>
 #### Relay의 종류
 
 1. AsyncRelay
@@ -325,13 +324,13 @@ Subject는 브릿지나 프록시의 역할을 한다. 이는 ReactiveX에서 Ob
 4. ReplayRelay
 
 
-
+<br/>
 #### Trait 이란?
 
 Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘어서 communicate 할 수 있도록 도와주는 것.
 
 
-
+<br/>
 #### Trait의 종류
 
 - ControlProperty / ControlEvent
@@ -339,7 +338,7 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
 - Signal
 
 
-
+<br/>
 #### Trait의 특징
 
 - 에러를 발생시키지 않는다.
@@ -348,13 +347,13 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
 - Signal을 제외하고 리소스를 공유한다.
 
 
-
+<br/>
 #### Driver
 
 에러를 방출하지 않고, 메인스레드에서 동작하며, 백그라운드 스레드에서 UI 변화가 만들어지는 것을 회피하는 특별한 Observable
 
 
-
+<br/>
 #### Signal
 
 - 실패하지 않음
@@ -365,7 +364,7 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
 - 둘 중 어떤 것을 써야할지 헷갈릴 때에는 "리소스를 연결할 때 마지막에 발생한 이벤트를 반복할 필요가 있는가?" 를 생각하고 그렇다면 Driver를, 그렇지 않다면 Signal을 사용하면 된다.
 
 
-
+<br/>
 #### 추가 Observable
 
 1. Single
@@ -387,11 +386,11 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
 
 
 
-
+<br/><br/>
 ## 3. Operator
 
 
-
+<br/>
 #### Filtering Operator
 
 - ignoreElement : onNext의 이벤트를 무시하는 operator
@@ -405,7 +404,7 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
   - 기존 : element
 
   - enumerated : (index, element)
-
+<br/>
 #### Combining Operator
 
 여러 Observable을 합치는 Operator
@@ -473,7 +472,7 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
       .disposed(by: disposeBag) 
   ```
 
-
+<br/>
 #### Time Based Operator
 
 1. replay : 이벤트 방출 후에 이벤트 발생 시 정해놓은 버퍼 만큼의 이벤트를 방출
@@ -550,7 +549,7 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
    - 통신 타임아웃 처리에 사용하면 될듯싶다.
 
 
-
+<br/>
 #### 에러 관리
 
 - catch : 에러를 확인하고 처리하는 방법
@@ -561,7 +560,7 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
 
 
 
-
+<br/><br/>
 
 ---
 
