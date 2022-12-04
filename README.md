@@ -1,48 +1,45 @@
-# RxTestProject
-
+# RxTestProject  
 
 
 #### RxSwift를 사용하는 이유?
 
 - 비동기로 처리되는 경우에는 호출한 함수가 끝난 뒤에 클로저를 사용해서 처리한다.
 - 비동기로 처리된 후에 다시 비동기로 프로세스를 처리할 경우, 사용하는 콜백이 많아지고 코드의 가독성은 떨어진다. (클로저를 중복으로 사용하기 때문!)
-- 이렇게 클로저로 응답을 받지 않고, 일반 함수에서 리턴을 받는 것 처럼 비동기 처리를 하기 위해 사용하는 것이 RxSwift라고 한다
+- 이렇게 클로저로 응답을 받지 않고, 일반 함수에서 리턴을 받는 것 처럼 비동기 처리를 하기 위해 사용하는 것이 RxSwift라고 한다    
 
+<br/>
 
 
 #### [목차]
 
-1. [Observable](#1. Observable)
+1. [Observable](#1.-observable)
    - Observable 이란
    - Observable의 생명주기
    - Observable의 생성
    - Subscribe
    - Disposing
    - Observable과 Observer
-2. [Subject, Relay](#2. Subject, Relay)
+2. [Subject, Relay](#2.-subject,-relay)
    - Subject 란?
    - Subject의 종류
    - 추가 Observable
    - Realy
-3. [Operator](#3. Operator)
+3. [Operator](#3.-operator)
    - Filtering Operator
    - Combining Operator
-   - Time Based Operator
-
-
-
+   - Time Based Operator  
+  
+<br/> <br/>
 
 
 ## 1. Observable
-
----
 
 #### Observable 이란
 
 - Obsevable은 비동기 등 처리를 통해 '나중에 생기는 데이터'를 처리하는 객체라고 생각하면 된다.
 
 - Observable은 for-each 로 대표되는 swift의 Sequence와 동일한 개념이다.
-
+<br/>
 
 
 #### Observable의 생명주기
@@ -62,6 +59,7 @@ RxSwift의 핵심
 ```
 
 
+<br/>
 
 #### Observable의 생성
 
@@ -125,7 +123,7 @@ RxSwift의 핵심
    let observable = Observable<Int>.repeatElement(6) // 6, 6, 6, 6 ....
    ```
 
-   
+<br/> <br/>
 
 #### Subscribe
 
@@ -154,6 +152,7 @@ let observable = Observable.of(1, 2, 3)
   - bind 를 사용하면 더 간단하게 값을 넣어줄 수 있다.
 
 
+<br/>
 
 #### Disposing
 
@@ -172,6 +171,7 @@ let observable = Observable.of(1, 2, 3)
 - 구독 취소를 하는 이유 : 무한히 이벤트 방출을 기다리는 객체를 남겨두는 것은 메모리 누수를 초래할 수 있기 때문
 
 
+<br/>
 
 ####  Observable과 Observer
 
@@ -186,11 +186,10 @@ let observable = Observable.of(1, 2, 3)
 
 
 
-
+<br/><br/>
 
 ## 2. Subject, Relay
 
----
 
 #### Subject 란?
 
@@ -218,6 +217,7 @@ Subject는 브릿지나 프록시의 역할을 한다. 이는 ReactiveX에서 Ob
   - 최초 이벤트는 [1, 2, 3] 이 발생하며, 외부에서 onNext를 이용해 데이터를 넣어줬기 때문에 이후 [4, 5, 6] 이벤트가 한 번 더 발생한다.
 
 
+<br/>
 
 #### Subject의 종류
 
@@ -308,6 +308,7 @@ Subject는 브릿지나 프록시의 역할을 한다. 이는 ReactiveX에서 Ob
    - 메모리를 효율적으로 사용하기 위해서 최초 생성 시 버퍼 크기를 선언해준다.
 
 
+<br/>
 
 #### Relay란?
 
@@ -316,6 +317,7 @@ Subject는 브릿지나 프록시의 역할을 한다. 이는 ReactiveX에서 Ob
 - 그렇기 때문에 Relay는 이벤트가 결코 종료되지 않음을 보장한다.
 
 
+<br/>
 
 #### Relay의 종류
 
@@ -325,12 +327,14 @@ Subject는 브릿지나 프록시의 역할을 한다. 이는 ReactiveX에서 Ob
 4. ReplayRelay
 
 
+<br/>
 
 #### Trait 이란?
 
 Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘어서 communicate 할 수 있도록 도와주는 것.
 
 
+<br/>
 
 #### Trait의 종류
 
@@ -339,6 +343,7 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
 - Signal
 
 
+<br/>
 
 #### Trait의 특징
 
@@ -348,12 +353,14 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
 - Signal을 제외하고 리소스를 공유한다.
 
 
+<br/>
 
 #### Driver
 
 에러를 방출하지 않고, 메인스레드에서 동작하며, 백그라운드 스레드에서 UI 변화가 만들어지는 것을 회피하는 특별한 Observable
 
 
+<br/>
 
 #### Signal
 
@@ -365,6 +372,7 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
 - 둘 중 어떤 것을 써야할지 헷갈릴 때에는 "리소스를 연결할 때 마지막에 발생한 이벤트를 반복할 필요가 있는가?" 를 생각하고 그렇다면 Driver를, 그렇지 않다면 Signal을 사용하면 된다.
 
 
+<br/>
 
 #### 추가 Observable
 
@@ -386,11 +394,10 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
 
 
 
-
+<br/><br/>
 
 ## 3. Operator
 
----
 
 #### Filtering Operator
 
@@ -405,6 +412,8 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
   - 기존 : element
 
   - enumerated : (index, element)
+
+<br/>
 
 #### Combining Operator
 
@@ -473,6 +482,7 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
       .disposed(by: disposeBag) 
   ```
 
+<br/>
 
 #### Time Based Operator
 
@@ -550,6 +560,7 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
    - 통신 타임아웃 처리에 사용하면 될듯싶다.
 
 
+<br/>
 
 #### 에러 관리
 
@@ -561,7 +572,7 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
 
 
 
-
+<br/><br/>
 
 ---
 
