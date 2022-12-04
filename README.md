@@ -28,7 +28,7 @@
    - Filtering Operator
    - Combining Operator
    - Time Based Operator  
-  
+
 <br/> <br/>
 
 
@@ -578,3 +578,153 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
 
 *참고 : 도서 RxSwift Reactive Programming With Swift, 유튜브 곰튀김 RxSwift 4시간에 끝내기, 강의 패스트캠퍼스 30개 프로젝트로 배우는 iOS 앱 개발 with Swift 초격차 패키지 Online 강의*
 
+
+
+
+
+
+
+----
+
+### RxSwift 를 이용한 포켓몬 도감 프로젝트 
+
+
+
+1. Observable을 이용한 서식지 리스트 받아오기
+
+   ```swift
+     /// Observable 을 이용한 data fetch -> 요청이 있을 때마다 Observable을 새로 생성한다.
+     /// - Returns: TatalHabitat 을 generic 타입으로 하는 Observable 객체
+   	func rxFetchHabitatWithObservable() -> Observable<TotalHabitat> {
+       return Observable<TotalHabitat>.create { emitter in
+         
+         guard let url = URL(string: self.habitateURL) else {
+           emitter.onError(NetworkError.invalidUrl)
+           return Disposables.create()
+         }
+         
+         URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
+           sleep(2) // indicator 확인을 위한 sleep
+           if let error = error {
+             emitter.onError(error)
+             return
+           }
+           
+           if let habitat = try? JSONDecoder().decode(TotalHabitat.self, from: data!) {
+             emitter.onNext(habitat)
+           }
+           
+           emitter.onCompleted()
+         }
+         .resume()
+   
+         return Disposables.create()
+       }
+     }
+   ```
+
+   - 요청이 있을 때마다 Observable을 새로 생성한다.
+
+   - 호출하는 방법은 아래와 같다.
+
+     ```swift
+         rxFetchHabitatWithObservable()
+           .subscribe { habitat in
+             self.habitat = habitat
+             DispatchQueue.main.async {
+               self.habitatTableView.reloadData()
+             }
+           } onError: { error in
+             self.hideLoading()
+             print("\(error.localizedDescription)")
+     
+           } onCompleted: {
+             self.hideLoading()
+           }
+           .disposed(by: disposeBag)
+     ```
+
+     
+
+2. PublishSubject를 이용한 서식지 리스트 받아오기
+
+   ```swift
+   var rxHabitat = PublishSubject<TotalHabitat>()
+   
+   /// 3. PublishSubject 을 이용한 data fetch -> 미리 선언한 Subject 객체에 바로 onNext 이벤트를 보내줄 수 있다.
+   private func rxFetchHabitatWithSubject() {
+       
+       guard let url = URL(string: habitateURL) else {
+         self.rxHabitat.onError(NetworkError.invalidUrl)
+         return
+       }
+       
+       showLoading()
+       
+       let request = URLRequest(url: url)
+       
+       URLSession.shared.dataTask(with: request) { data, response, error in
+         sleep(2)
+         if let error = error {
+           self.rxHabitat.onError(error)
+           return
+         }
+         
+         if let habitat = try? JSONDecoder().decode(TotalHabitat.self, from: data!) {
+           self.rxHabitat.onNext(habitat)
+         }
+         
+         self.rxHabitat.onCompleted()
+       }
+       .resume()
+     }
+   ```
+
+   - 미리 선언한 Subject 객체에 바로 onNext 이벤트를 보내줄 수 있다.
+
+   - 이벤트가 발생하면 진행될 동작들을 미리 `bindUI()` 함수에 정의해두고 사용한다.
+
+     ```swift
+       private func bindUI() {
+         rxHabitat
+           .observe(on: MainScheduler.instance)  // main thread 에서 처리할 내용이 있을 때에는 이 한줄로 처리가 가능
+           .subscribe(onNext: { habitat in
+             self.habitat = habitat
+             self.habitatTableView.reloadData()
+           }, onError: { error in
+             self.hideLoading()
+             print("\(error.localizedDescription)")
+           }, onCompleted: {
+             self.hideLoading()
+           })
+           .disposed(by: disposeBag)
+     	)
+      }
+     ```
+
+
+
+
+
+> UITalbeView에 bind 하기
+
+- 기존에 사용하던 방식과 다르게 delegate, datasoruce를 연결하지 않는다.
+
+  - delegate 연결하고, 바인딩을 사용하면 크래시가 발생한다.
+  - 기존의 delegate 메서드를 구현하지 않기 때문에 코드 양이 많이 줄어든다!
+
+- 사용방법
+
+  ```swift
+  rxHabitat
+        .observe(on: MainScheduler.instance)
+        .bind(to: habitatTableView.rx.items(cellIdentifier: "cell",
+                                            cellType: UITableViewCell.self)) { (row, element, cell) in
+          cell.textLabel?.text = element.name
+        }
+        .disposed(by: disposeBag)
+  ```
+
+  - subscribe를 하지 않고, onNext로 전달받는 객체를 바로 테이블뷰 셀에 바인딩해줄 수 있다.
+
+> > > RxCocoa를 이용해보니 Rx의 강력함을 느낄 수 있었다
