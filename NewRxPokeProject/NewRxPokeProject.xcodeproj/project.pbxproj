@@ -19,6 +19,11 @@
 		CB42A362293C688A004E439D /* NewRxPokeProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42A361293C688A004E439D /* NewRxPokeProjectUITests.swift */; };
 		CB42A364293C688A004E439D /* NewRxPokeProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42A363293C688A004E439D /* NewRxPokeProjectUITestsLaunchTests.swift */; };
 		CB42A373293C6974004E439D /* TotalHabitat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42A372293C6974004E439D /* TotalHabitat.swift */; };
+		CBA9CCD52945A6F20013654C /* PokeHabitat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9CCD42945A6F20013654C /* PokeHabitat.swift */; };
+		CBA9CCD72945B3A50013654C /* PokeSpecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9CCD62945B3A50013654C /* PokeSpecies.swift */; };
+		CBA9CCD92945BF030013654C /* FieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9CCD82945BF030013654C /* FieldViewController.swift */; };
+		CBA9CCDD2945BF940013654C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9CCDC2945BF940013654C /* NetworkError.swift */; };
+		CBA9CCDF2945C2CE0013654C /* NetworkAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9CCDE2945C2CE0013654C /* NetworkAgent.swift */; };
 		CDDD0D67B08913C829435705 /* Pods_NewRxPokeProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6754FE019768067BB0260FAB /* Pods_NewRxPokeProjectTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +67,11 @@
 		CB42A361293C688A004E439D /* NewRxPokeProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRxPokeProjectUITests.swift; sourceTree = "<group>"; };
 		CB42A363293C688A004E439D /* NewRxPokeProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRxPokeProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CB42A372293C6974004E439D /* TotalHabitat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalHabitat.swift; sourceTree = "<group>"; };
+		CBA9CCD42945A6F20013654C /* PokeHabitat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeHabitat.swift; sourceTree = "<group>"; };
+		CBA9CCD62945B3A50013654C /* PokeSpecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeSpecies.swift; sourceTree = "<group>"; };
+		CBA9CCD82945BF030013654C /* FieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldViewController.swift; sourceTree = "<group>"; };
+		CBA9CCDC2945BF940013654C /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		CBA9CCDE2945C2CE0013654C /* NetworkAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAgent.swift; sourceTree = "<group>"; };
 		D895F36DECE1806A8C838F09 /* Pods-NewRxPokeProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewRxPokeProject.debug.xcconfig"; path = "Target Support Files/Pods-NewRxPokeProject/Pods-NewRxPokeProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,10 +138,11 @@
 		CB42A33F293C6888004E439D /* NewRxPokeProject */ = {
 			isa = PBXGroup;
 			children = (
+				CBA9CCDB2945BF8E0013654C /* Network */,
 				CB42A370293C689A004E439D /* Model */,
+				CBA9CCDA2945BF790013654C /* ViewController */,
 				CB42A340293C6888004E439D /* AppDelegate.swift */,
 				CB42A342293C6888004E439D /* SceneDelegate.swift */,
-				CB42A344293C6888004E439D /* MapViewController.swift */,
 				CB42A346293C6888004E439D /* Main.storyboard */,
 				CB42A349293C688A004E439D /* Assets.xcassets */,
 				CB42A34B293C688A004E439D /* LaunchScreen.storyboard */,
@@ -161,8 +172,28 @@
 			isa = PBXGroup;
 			children = (
 				CB42A372293C6974004E439D /* TotalHabitat.swift */,
+				CBA9CCD42945A6F20013654C /* PokeHabitat.swift */,
+				CBA9CCD62945B3A50013654C /* PokeSpecies.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CBA9CCDA2945BF790013654C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CB42A344293C6888004E439D /* MapViewController.swift */,
+				CBA9CCD82945BF030013654C /* FieldViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CBA9CCDB2945BF8E0013654C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CBA9CCDC2945BF940013654C /* NetworkError.swift */,
+				CBA9CCDE2945C2CE0013654C /* NetworkAgent.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		FDB08B369E0385429CF10317 /* Pods */ = {
@@ -417,8 +448,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBA9CCD92945BF030013654C /* FieldViewController.swift in Sources */,
+				CBA9CCDD2945BF940013654C /* NetworkError.swift in Sources */,
+				CBA9CCD52945A6F20013654C /* PokeHabitat.swift in Sources */,
 				CB42A345293C6888004E439D /* MapViewController.swift in Sources */,
+				CBA9CCDF2945C2CE0013654C /* NetworkAgent.swift in Sources */,
 				CB42A341293C6888004E439D /* AppDelegate.swift in Sources */,
+				CBA9CCD72945B3A50013654C /* PokeSpecies.swift in Sources */,
 				CB42A373293C6974004E439D /* TotalHabitat.swift in Sources */,
 				CB42A343293C6888004E439D /* SceneDelegate.swift in Sources */,
 			);

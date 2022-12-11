@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// 포켓몬 서식지 리스트 
 struct TotalHabitat: Decodable {
     var results: [HabitatInfo]?
 }

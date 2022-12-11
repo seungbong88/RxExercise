@@ -359,8 +359,7 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
 
 에러를 방출하지 않고, 메인스레드에서 동작하며, 백그라운드 스레드에서 UI 변화가 만들어지는 것을 회피하는 특별한 Observable
 
-
-<br/>
+****<br/>
 
 #### Signal
 
@@ -728,3 +727,28 @@ Traits는 Observable Sequance 프로퍼티들을 인터페이스 경계를 넘�
   - subscribe를 하지 않고, onNext로 전달받는 객체를 바로 테이블뷰 셀에 바인딩해줄 수 있다.
 
 > > > RxCocoa를 이용해보니 Rx의 강력함을 느낄 수 있었다
+
+
+
+
+
+---
+
+[TO-DO]
+
+1. 포켓몬 랜덤으로 나오도록 만들기
+2. 포켓몬 잡기
+3. 포켓몬 도감 만들기
+
+
+
+> UICollectionView with Rxd
+>
+> UITabelView with Rx
+
+
+
+```swift
+PokeSpecies(id: 116, name: "쏘드라", habitatName: "sea", captureRate: 225, type: "드래곤포켓몬", descriptions: ["수면에서 힘차게 먹물을\n발사해서 날고 있는 벌레를\n맞춰서 떨어뜨릴 때가 있다고 한다.", "산호의 그늘에 거처를 만든다.\n위험을 느끼면 입에서\n새까만 먹물을 내뿜고 도망간다.", "작은 벌레나 바위의 이끼를 먹는다.\n해류가 빨라지면 꼬리로 바위나\n산호를 휘감아 떠내려가지 않게 한다.", "위험을 감지하면 반사적으로 입에서\n새까만 먹물을 뿜어내고 도망간다.\n등지느러미를 능숙히 움직여 헤엄친다.", "신변에 위험을 느끼면\n입에서 물이나 특수한 먹물을\n힘차게 뿜어낸다.", "잔잔하게 흐르는 고요한 바다에\n산다. 습격당하면 새까만\n먹물을 내뿜고 그 틈에 도망친다.", "물속에서 춤추듯이 헤엄쳐\n소용돌이를 만든다. 동료와\n소용돌이의 크기를 겨루며 논다."], habitat: Optional(NewRxPokeProject.PokeSpecies.NameUrlInfo(name: "sea", url: "https://pokeapi.co/api/v2/pokemon-habitat/7/")))
+```
+
