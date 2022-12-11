@@ -55,7 +55,7 @@ class MapViewController: UIViewController {
     
     rxHabitat
       .observe(on: MainScheduler.instance)
-      .subscribe(onNext: {
+      .subscribe(onNext: { 
         self.rxFetchRandomSpecies(from: $0)
       }, onError: {
         print($0.localizedDescription)
