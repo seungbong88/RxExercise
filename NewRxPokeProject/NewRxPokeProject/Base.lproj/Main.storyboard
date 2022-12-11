@@ -78,9 +78,58 @@
                     <view key="view" contentMode="scaleToFill" id="bfo-AY-M5h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2E3-t3-nKL">
+                                <rect key="frame" x="82" y="323" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="5nw-wv-JVm"/>
+                                    <constraint firstAttribute="height" constant="250" id="cgR-QW-wFy"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsI-4k-aQt">
+                                <rect key="frame" x="186" y="593" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCf-c6-Bmj">
+                                <rect key="frame" x="186" y="134" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9U-Wi-xGL">
+                                <rect key="frame" x="20" y="802" width="374" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kP3-RE-flL"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="catchButtonDidTap:" destination="Wz0-hv-Bzc" eventType="touchUpInside" id="b9q-e6-HAR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cAK-6y-ZDT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GsI-4k-aQt" firstAttribute="centerX" secondItem="2E3-t3-nKL" secondAttribute="centerX" id="33U-DC-Otq"/>
+                            <constraint firstItem="2E3-t3-nKL" firstAttribute="centerY" secondItem="bfo-AY-M5h" secondAttribute="centerY" id="8Lp-p9-T2E"/>
+                            <constraint firstItem="cAK-6y-ZDT" firstAttribute="bottom" secondItem="x9U-Wi-xGL" secondAttribute="bottom" constant="20" id="CRZ-n7-QgO"/>
+                            <constraint firstItem="2E3-t3-nKL" firstAttribute="centerX" secondItem="bfo-AY-M5h" secondAttribute="centerX" id="LCt-Oc-7P6"/>
+                            <constraint firstItem="eCf-c6-Bmj" firstAttribute="top" secondItem="cAK-6y-ZDT" secondAttribute="top" constant="90" id="NqT-Gc-cPv"/>
+                            <constraint firstItem="x9U-Wi-xGL" firstAttribute="leading" secondItem="cAK-6y-ZDT" secondAttribute="leading" constant="20" id="bIl-CS-scr"/>
+                            <constraint firstItem="cAK-6y-ZDT" firstAttribute="trailing" secondItem="x9U-Wi-xGL" secondAttribute="trailing" constant="20" id="cxj-2O-J4m"/>
+                            <constraint firstItem="GsI-4k-aQt" firstAttribute="top" secondItem="2E3-t3-nKL" secondAttribute="bottom" constant="20" id="fLd-DV-hEp"/>
+                            <constraint firstItem="eCf-c6-Bmj" firstAttribute="centerX" secondItem="cAK-6y-ZDT" secondAttribute="centerX" id="nZn-9t-PkF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fieldBottomText" destination="GsI-4k-aQt" id="Y3M-BW-pcU"/>
+                        <outlet property="fieldTopText" destination="eCf-c6-Bmj" id="2S8-aj-EtU"/>
+                        <outlet property="pokeImageView" destination="2E3-t3-nKL" id="XGJ-YG-QwI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lBL-YL-UmX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,6 +139,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

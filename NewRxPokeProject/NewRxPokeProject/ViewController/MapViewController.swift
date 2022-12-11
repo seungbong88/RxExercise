@@ -55,7 +55,7 @@ class MapViewController: UIViewController {
     
     rxHabitat
       .observe(on: MainScheduler.instance)
-      .subscribe(onNext: { 
+      .subscribe(onNext: {
         self.rxFetchRandomSpecies(from: $0)
       }, onError: {
         print($0.localizedDescription)
@@ -75,6 +75,7 @@ class MapViewController: UIViewController {
       let id = FieldViewController.id
       if let fieldVC = self.storyboard?.instantiateViewController(withIdentifier: id) as? FieldViewController {
         fieldVC.pokeSpecies = pokemon
+        fieldVC.modalPresentationStyle = .fullScreen
         self.present(fieldVC, animated: true)
       }
     }
@@ -171,5 +172,4 @@ class MapViewController: UIViewController {
       })
       .disposed(by: disposeBag)
   }
-
 }

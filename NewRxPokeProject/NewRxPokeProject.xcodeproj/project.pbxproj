@@ -24,6 +24,7 @@
 		CBA9CCD92945BF030013654C /* FieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9CCD82945BF030013654C /* FieldViewController.swift */; };
 		CBA9CCDD2945BF940013654C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9CCDC2945BF940013654C /* NetworkError.swift */; };
 		CBA9CCDF2945C2CE0013654C /* NetworkAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9CCDE2945C2CE0013654C /* NetworkAgent.swift */; };
+		CBA9CCE12945C77F0013654C /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA9CCE02945C77F0013654C /* Pokemon.swift */; };
 		CDDD0D67B08913C829435705 /* Pods_NewRxPokeProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6754FE019768067BB0260FAB /* Pods_NewRxPokeProjectTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,9 +70,10 @@
 		CB42A372293C6974004E439D /* TotalHabitat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalHabitat.swift; sourceTree = "<group>"; };
 		CBA9CCD42945A6F20013654C /* PokeHabitat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeHabitat.swift; sourceTree = "<group>"; };
 		CBA9CCD62945B3A50013654C /* PokeSpecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeSpecies.swift; sourceTree = "<group>"; };
-		CBA9CCD82945BF030013654C /* FieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldViewController.swift; sourceTree = "<group>"; };
+		CBA9CCD82945BF030013654C /* FieldViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = FieldViewController.swift; sourceTree = "<group>"; };
 		CBA9CCDC2945BF940013654C /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		CBA9CCDE2945C2CE0013654C /* NetworkAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAgent.swift; sourceTree = "<group>"; };
+		CBA9CCE02945C77F0013654C /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		D895F36DECE1806A8C838F09 /* Pods-NewRxPokeProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewRxPokeProject.debug.xcconfig"; path = "Target Support Files/Pods-NewRxPokeProject/Pods-NewRxPokeProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +176,7 @@
 				CB42A372293C6974004E439D /* TotalHabitat.swift */,
 				CBA9CCD42945A6F20013654C /* PokeHabitat.swift */,
 				CBA9CCD62945B3A50013654C /* PokeSpecies.swift */,
+				CBA9CCE02945C77F0013654C /* Pokemon.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				CBA9CCD52945A6F20013654C /* PokeHabitat.swift in Sources */,
 				CB42A345293C6888004E439D /* MapViewController.swift in Sources */,
 				CBA9CCDF2945C2CE0013654C /* NetworkAgent.swift in Sources */,
+				CBA9CCE12945C77F0013654C /* Pokemon.swift in Sources */,
 				CB42A341293C6888004E439D /* AppDelegate.swift in Sources */,
 				CBA9CCD72945B3A50013654C /* PokeSpecies.swift in Sources */,
 				CB42A373293C6974004E439D /* TotalHabitat.swift in Sources */,
