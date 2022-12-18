@@ -106,9 +106,6 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="catchButtonDidTap:" destination="Wz0-hv-Bzc" eventType="touchUpInside" id="b9q-e6-HAR"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cAK-6y-ZDT"/>
@@ -126,6 +123,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="catchButton" destination="x9U-Wi-xGL" id="xcH-TV-rUK"/>
                         <outlet property="fieldBottomText" destination="GsI-4k-aQt" id="Y3M-BW-pcU"/>
                         <outlet property="fieldTopText" destination="eCf-c6-Bmj" id="2S8-aj-EtU"/>
                         <outlet property="pokeImageView" destination="2E3-t3-nKL" id="XGJ-YG-QwI"/>
