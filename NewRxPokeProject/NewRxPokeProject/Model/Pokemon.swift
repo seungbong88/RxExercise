@@ -22,6 +22,11 @@ struct Pokemon {
     self.species = json.species
     self.sprites = json.sprites
   }
+  
+  init() {
+    self.id = 0
+    self.name = ""
+  }
 }
 
 // MARK: - Poke Species Property Types

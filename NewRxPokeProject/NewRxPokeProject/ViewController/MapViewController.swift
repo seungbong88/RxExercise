@@ -134,6 +134,7 @@ class MapViewController: UIViewController {
       }, onCompleted: {
         self.hideLoading()
       })
+      .disposed(by: disposeBag)
   }
   
   private func rxFetchHabitat(urlString: String) {
